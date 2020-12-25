@@ -16,8 +16,6 @@ while True:
         webbrowser.open('chrome.exe')
     elif 'open edge' in query :
         webbrowser.open('msedge.exe')
-    elif 'open pie chart' in query :
-        os.startfile("C:\\Users\\rohit\\AppData\\Local\\pycharm\\bin\\pycharm64.exe")
     elif 'google' in query :
         query = query.replace('google', '')
         webbrowser.open('https://www.google.com/search?q=' + query)
@@ -27,3 +25,18 @@ while True:
     elif 'git hub' in query :
         query = query.replace('git hub', '')
         webbrowser.open('https://www.github.com/search?q=' + query)
+    elif 'wikipedia' in query :
+        sp('Searching wikipedia....')
+        query = query.replace('wikipedia', '')
+        results = wikipedia.summary(query, sentences = 3)
+        sp('According to wikipedia...')
+        sp('results')
+    elif 'the time' in query :
+        strtime = datetime.datetime.now().strtime('%H:%M')
+        sp(f'the time is {strtime}')
+    elif 'youtube' in query :
+        query = query.replace('youtube', '')
+        webbrowser.open(f'https://www.youtube.com/results?search_query={query}')
+    elif 'play' in query :
+        query = query.replace('play', '')
+        pywhatkit.playonyt(query)
